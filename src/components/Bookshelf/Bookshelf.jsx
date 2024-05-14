@@ -1,4 +1,5 @@
 import { useState } from "react"
+import BookCard from "./BookCard/BookCard.jsx"
 
 const Bookshelf = () => {
     const newBookInit = {
@@ -46,7 +47,9 @@ const Bookshelf = () => {
                     <button type="submit">Add Book</button>
                 </form>
             </div>
-            <div className="bookCardsDiv">{/* Book cards will display here */}</div>
+            <div className="bookCardsDiv">
+                {books.map( (book, index) => <BookCard key={index} {...book} /> )}
+            </div>
         </div>
     </>
 }
